@@ -5,8 +5,8 @@
 screen_width = 3024
 screen_height = 1964
 
-# introduction
-introduction = 1 # 1 for introduction, 0 for no introduction
+# test
+test = 1 # 1 for test trial, 0 for not test trial
 
 # experiment
 fix = 2

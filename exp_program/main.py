@@ -1,5 +1,18 @@
-from psychopy import visual, core  # import some libraries from PsychoPy
+from psychopy import core, visual, gui, data, event
+from psychopy.tools.filetools import fromFile, toFile
+import numpy, random
 import settings
+
+expInfo = {'Name':'HAL', 'Test': 0}
+expInfo['dateStr'] = data.getDateStr()  # add the current time
+# present a dialogue to change params
+dlg = gui.DlgFromDict(expInfo, title='Info', fixed=['dateStr'])
+if dlg.OK:
+    filename = expInfo['Name'] + "_" + expInfo['dateStr']
+else:
+    core.quit()  # the user hit cancel so exit
+
+print(filename)
 #create a window
 mywin = visual.Window([settings.screen_width,settings.screen_width], 
                       fullscr=True, screen=0, monitor="testMonitor", 
